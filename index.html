@@ -4,22 +4,40 @@
        <title>A long way to go yet</title> 
     </head>
     <body>
-<h1>Hello</h1>
+<h1 style="color:red;">Hello</h1>
 <!--
 <h2>CatPhotoApp</h2>
 -->
+<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
+<style>
+    h3 {color: purple;}
+    h4 {text-align: center;}
+    .blue-text {color:blue !important;}
+    .green-text {color: green;}
+    p {font-family: sans-serif; text-align: right;}
+    ol {font-family: Lobster, monospace;}
+    .smaller-image {width: 200px;}
+    .fat-orange-border {border-color: orange; border-width: 10px; border-style: solid; border-radius: 20%;}
+    .silver-background {background-color: silver;}
+    #game-form {background-color: yellow; color: blue;}
+    .blue-box {background-color: blue; padding: 40px 20px 20px 40px; margin:1.5em; width: 250px; height: 20px}
+    [type='radio'] {margin: 20px 0px 15px 0px;}
+body {background-color: white; color: brown;} 
+</style>
+<h3>Dirty Kitty Litter</h3>
+<h4>There's a bluebird in my heart</h4>
 <main>
 <a href="https://www.bbc.co.uk/">supposedly unbiased news</a> 
 <div>
-<p>Kitty ipsem and all that jazz</p>
-<ul>
+<p class="green-text blue-text">Kitty ipsem and all that jazz</p>
+<ul class="silver-background">
     <li>Stephen</li>
     <li>William</li>
     <li>Dawson</li>
     <li>Powell</li>
 </ul>
 </div>  
-<p>My top five favourite games (may not be accurate)</p>
+<p>My top <u>five</u> favourite games (may <strong>not</strong> be accurate)</p>
 <ol>
     <li>Final Fantasy 7</li>
     <li>Tales from the Borderlands</li>
@@ -27,8 +45,8 @@
     <li>Life is Strange 2</li>
     <li>Deus Ex: Human Revolution</li>
 </ol>
-<p>Yours can go below</p>
-<form action="www.robgamesarethebest.com/whatasicklistm8">
+<p style="text-align: justify;">Yours can go below</p>
+<form id="game-form" action="www.robgamesarethebest.com/whatasicklistm8">
 <input type="text" placeholder="Unreal Tournament" required>
 <button type="submit">Submit</button><br>
 <label for="DOOM">
@@ -39,10 +57,11 @@
 <label for="RTS"><input id="RTS" type="checkbox" name="Genre" value="RTS"> RTS</label>
 <label for="MMO"><input id="MMO" type="checkbox" name="Genre" value="MMO"> MMO</label>
 </form>
-<img
+<h5 class="blue-box">This is a blue box</h5>
+<img class="smaller-image"
 src="https://i.pinimg.com/originals/01/4c/cf/014ccf7549554c496c6099c4f4f1a6fc.jpg" alt="SPACE THE FINAL FRONTIER.">    
 <p>Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</p>
 </main>
-<a href="https://www.google.co.uk/"><img src="https://i1.sndcdn.com/artworks-000153983978-ksta8a-t500x500.jpg" alt="free to use"></a>
+<a href="https://www.google.co.uk/"><img class="smaller-image fat-orange-border" src="https://i1.sndcdn.com/artworks-000153983978-ksta8a-t500x500.jpg" alt="free to use"></a>
     </body>
 </html>
