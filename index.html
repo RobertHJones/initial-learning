@@ -8,10 +8,10 @@
         .blue-text {color: hsl(240, 90%, 50%) !important;}
         .green-text {color: green;}
         body {background: url(https://t4.ftcdn.net/jpg/03/69/74/53/240_F_369745370_H2e0QqwQFcVKDPYnHreoTOMDTJ4tIC6P.jpg);}
-        p {font-family: sans-serif; text-align: right; line-height: 50px;}
+        p {font-family: sans-serif; text-align: left; line-height: 50px;}
         ol {font-family: Lobster, monospace;}
         ul{font-size: 27px; text-transform: uppercase;}
-        .smaller-image {width: 200px; float: right;}
+        .smaller-image {width: 200px; float: left;}
         .fat-orange-border {border-color: orange; border-width: 10px; border-style: solid; border-radius: 20%;}
         .silver-background {background-color: silver;}
         .opaque-blue {background-color: rgba(00, 00, 255, 0.2)}
@@ -22,7 +22,7 @@
     body {background-color: white; color: green;} 
     #box-shadow {box-shadow: 0 10px 20px rgba(0,0,0,0.19); opacity: 0.7;}
     a:hover {color: blue;}
-    button {position: absolute; right: 150px;}
+    button {position: absolute; left: 150px;}
     h1 {position: fixed; top: 0px; z-index: 2;}
     .ball {width: 40px; height: 40px; margin: 50 auto; position: fixed; background: linear-gradient(35deg, #ccffff, #ffcccc); border-radius: 50%;}
     #ball1 {left: 20%;}
@@ -66,19 +66,25 @@
 <form id="game-form" action="www.robgamesarethebest.com/whatasicklistm8">
 <input type="text" placeholder="Unreal Tournament" required>
 <button type="submit">Submit</button><br>
+</form>
+<fieldset>
+    <legend>Which is better?</legend>
 <label for="DOOM">
     <input id="DOOM" type="radio" value="DOOM" name="DOOM-Quake">DOOM</label>
 <label for="Quake">
-    <input id="Quake" type="radio" value="Quake" name="DOOM-Quake">Quake</label><br>
+    <input id="Quake" type="radio" value="Quake" name="DOOM-Quake">Quake</label><br></fieldset>
 <label for="FPS"><input id="FPS" type="checkbox" name="Genre" checked value="FPS"> FPS</label>
 <label for="RTS"><input id="RTS" type="checkbox" name="Genre" value="RTS"> RTS</label>
 <label for="MMO"><input id="MMO" type="checkbox" name="Genre" value="MMO"> MMO</label>
-</form>
 <hr>
 <h5 class="blue-box">This is a blue box</h5>
 <h6 class="orange-box">This is the orange box</h6>
+<figure>
 <img class="smaller-image"
-src="https://i.pinimg.com/originals/01/4c/cf/014ccf7549554c496c6099c4f4f1a6fc.jpg" alt="SPACE THE FINAL FRONTIER.">    
+src="https://i.pinimg.com/originals/01/4c/cf/014ccf7549554c496c6099c4f4f1a6fc.jpg" alt="SPACE THE FINAL FRONTIER.">
+<br>
+<figcaption>Spacey no copyright photo</figcaption>
+</figure>    
 <p id="box-shadow">Some random cat text that makes no sense to me but it is also for the line height. Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</p>
 </main>
 <a href="https://www.google.co.uk/"><img class="smaller-image fat-orange-border" src="https://i1.sndcdn.com/artworks-000153983978-ksta8a-t500x500.jpg" alt="free to use"></a>
