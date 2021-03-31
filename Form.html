@@ -4,7 +4,7 @@
     <title>Tribute page for FCC</title>
     <style>
       #title {text-align: center;}
-      #main {background: url(https://cdn.pixabay.com/photo/2018/01/25/17/48/fantasy-3106688_960_720.jpg); font-family: helvetica; color: white;}
+      #main {background: url(https://cdn.pixabay.com/photo/2018/01/25/17/48/fantasy-3106688_960_720.jpg); font-family: helvetica; background-repeat: no-repeat; background-size: 1500px auto; color: white;}
       #description {text-align: center;}
       #survey-form {margin: auto 400px; width: 400px;}
       #name
@@ -24,8 +24,9 @@
         <h2>Email</h2> 
         <input id="email" type="email" placeholder="Enter your email" required>
         <h2>Age (optional)</h2>
-        <input id="number" type="number" placeholder="Age">
+        <input id="number" type="number" min="10" max="100" placeholder="Age">
         </form>
         </main>
         </body>
         </html>
+        
