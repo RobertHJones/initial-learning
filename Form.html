@@ -8,8 +8,13 @@
       #description {text-align: center;}
       #survey-form {margin: auto 400px; width: 400px;}
       #name
+      #name-label
       #email
+      #email-label
       #number
+      #number-label
+      #dropdown
+      #submit
     </style>
   </head>
   <body>
@@ -19,14 +24,35 @@
       </header>
       <p id="description"><i>Metal, nylon, gut, high or low tension - tell us what you think!</i></p><br>
       <form id="survey-form">
-        <h2>Name</h2>
-        <input id="name" type="text" placeholder="Enter your name" required>
-        <h2>Email</h2> 
-        <input id="email" type="email" placeholder="Enter your email" required>
-        <h2>Age (optional)</h2>
-        <input id="number" type="number" min="10" max="100" placeholder="Age">
+        <label id="name-label">Name</label><br>
+        <input id="name" type="text" placeholder="Enter your name" required><br><br>
+        <label id="email-label">Email</label> <br>
+        <input id="email" type="email" placeholder="Enter your email" required><br><br>
+        <label id="number-label">Age (optional)</label><br>
+        <input id="number" type="number" min="10" max="100" placeholder="Age"><br><br>
+        <label for="dropdown">Which option best describes your current level?</label><br>
+        <select id="dropdown" name="dropdown" required>
+          <option value="professional">Professional</option>
+          <option value="student">Student</option>
+          <option value="keenamateur">Keen Amateur</option>
+          <option value="teacher">Teacher</option></select><br><br>
+          <legend>Which string material do you favour?</legend>
+        <label for="steel">
+        <input id="steel" type="radio" value="Steel" name="steel-nylon-gut">Steel</label><br>
+<label for="nylon">
+    <input id="nylon" type="radio" value="Nylon" name="steel-nylon-gut">Nylon</label><br>
+        <label for="gut">
+          <input id="gut" type="radio" value="Gut" name="steel-nylon-gut">Gut</label><br><br>
+        <legend>Which of these strings would you recommend? (check all that apply)</legend>
+          <label for="Larsen"><input id="Larsen" type="checkbox" name="String" value="Larsen"> Larsen</label><br>
+<label for="Eudoxa"><input id="Eudoxa" type="checkbox" name="String" value="Eudoxa"> Eudoxa</label><br>
+<label for="Jargar"><input id="Jargar" type="checkbox" name="String" value="Jargar"> Jargar</label><br>
+        <label for="Dominant"><input id="Dominant" type="checkbox" name="String" value="Dominant"> Dominant</label><br>
+        <label for="Spirocore"><input id="Spirocore" type="checkbox" name="String" value="Spirocore"> Spirocore</label><br><br>
+        <legend>Are there any other Strings you would recommend, or on which you would like to comment?</legend>
+        <textarea name="Comment" rows="6" cols="30">Enter your comments here...</textarea><br>
+        <button id="submit" type="submit">Submit</button>
         </form>
         </main>
         </body>
         </html>
-        
