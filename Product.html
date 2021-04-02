@@ -6,13 +6,38 @@
       #main {background-color: #F0E691; color: #0F196E;}
       #header {font-size: 10px; color: black;}
       #header-img
-      #nav-bar 
-      .nav-link {font-size: 20px;}
+      #nav-bar
+      .nav-link
       h2 {text-align: center;}
       #video {margin: auto 400px;}
       #form
       #email
       #email-label
+      #submit
+      nav {position: fixed; top: 0;
+width: 100%;}
+ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  font-size: 17px;
+  list-style-type: none;
+  text-align: center;
+  padding: 10px;
+  background-color: #F0E691;}
+li a {
+  text-decoration: none;
+  color: black;
+  padding 9px 15px;}
+li a:hover {
+  background-color: #0F196E;
+  color: white;}
+nav {
+position: fixed;
+top: 0;
+width: 100%;}
+@media (max-height: 800px ){
+  h2{font-size: 10px;}}
       </style>
   </head>
   <body>
@@ -21,9 +46,12 @@
         <img id="header-img" src="https://image.flaticon.com/icons/png/128/1394/1394557.png" alt="cello icon">
         <h1>From Cremona to Yamaha</h1>
         <nav id="nav-bar">
-          <a class="nav-link" href="#range">Our Range</a>
-          <a class="nav-link" href="#which">Which cello should I buy?</a>
-          <a class="nav-link" href="#price">Pricing</a></nav>
+<nav>
+  <ul>
+<li>
+  <a class="nav-link" href="#range">Our Range</a></li>
+    <li><a class="nav-link" href="#which">Which cello should I buy?</a></li>
+    <li><a class="nav-link" href="#price">Pricing</a></li></ul></nav>
       </header>
       <section id="range"><h2><u>Our Range</u></h2>
         <article><h3>Whether you want a classic old Italian instrument, a durable and expensive sounding carbon fibre model, or a versatile electric cello, we've got you covered.</h3></article>
@@ -41,10 +69,11 @@
         <article><h3>Yamaha SVC 150 - £120,000</h3></article>
         </section>
       <iframe id="video" width="560" height="315" src="https://www.youtube.com/embed/_aMJ21HwlT0"></iframe><br><br>
-      <form id="form">
+      <form id="form" action="https://www.freecodecamp.com/email-submit">
         <label id="email-label">If you would like to arrange a consultation session, please enter your email below and we will contact you to arrange a time.</label><br>
-        <input id="email" type="email" placeholder="Enter your email address">
-        </form>
-        </main>
-        </body>
-        </html>
+        <input id="email" type="email" name="email" button-type="submit" placeholder="Enter your email address" required><br>
+        <input id="submit" type="submit"></input>
+      </form>
+      </main>
+      </body>
+      </html>
