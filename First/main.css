@@ -1,0 +1,27 @@
+
+    h3 {color: purple; font-weight: 500;}
+    h4 {text-align: center; font-size: 30px; position: relative; top: 150px;}
+    .blue-text {color: hsl(240, 90%, 50%) !important;}
+    .green-text {color: green;}
+    body {background: url(https://t4.ftcdn.net/jpg/03/69/74/53/240_F_369745370_H2e0QqwQFcVKDPYnHreoTOMDTJ4tIC6P.jpg);}
+    p {font-family: sans-serif; text-align: left; line-height: 50px;}
+    ol {font-family: Lobster, monospace;}
+    ul{font-size: 27px; text-transform: uppercase;}
+    .smaller-image {width: 200px; float: left;}
+    .fat-orange-border {border-color: orange; border-width: 10px; border-style: solid; border-radius: 20%;}
+    .silver-background {background-color: silver;}
+    .opaque-blue {background-color: rgba(00, 00, 255, 0.2)}
+    #game-form {background-color: yellow; color: blue;}
+    .blue-box {background-color: blue; padding: 40px 20px 20px 40px; margin: 1.5em; width: 250px; height: auto;}
+    [type='radio'] {margin: 20px 0px 15px 0px;}
+    .orange-box {background-color: orange; padding: 30px 20px 20px 30px; margin: auto; width: 150px;}
+body {background-color: white; color: green;} 
+#box-shadow {box-shadow: 0 10px 20px rgba(0,0,0,0.19); opacity: 0.7;}
+a:hover {color: blue;}
+button {position: absolute; left: 150px;}
+h1 {position: fixed; top: 0px; z-index: 2;}
+.ball {width: 40px; height: 40px; margin: 50 auto; position: fixed; background: linear-gradient(35deg, #ccffff, #ffcccc); border-radius: 50%;}
+#ball1 {left: 20%;}
+#ball2 {left: 65%; transform: scale(2);}
+div {border-radius: 20px; width: 70%; height: 400px; margin: 50px auto; background: repeating-linear-gradient(35deg, #CCFFFF 0px, #FFCCCC 30px);}
+div:hover {transform: scale(1.1);}
