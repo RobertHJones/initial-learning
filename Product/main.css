@@ -1,0 +1,33 @@
+#main {background-color: #F0E691; color: #0F196E;}
+      #header {font-size: 10px; color: black;}
+      #header-img
+      #nav-bar
+      .nav-link
+      h2 {text-align: center;}
+      #video {margin: auto 400px;}
+      #form
+      #email
+      #email-label
+      #submit
+      nav {position: fixed; top: 0;
+width: 100%;}
+ul {  
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  font-size: 17px;
+  list-style-type: none;
+  text-align: center;
+  padding: 10px;
+  background-color: #F0E691;}
+li a {
+  text-decoration: none;
+  color: black;
+  padding 9px 15px;}
+  nav {position: fixed; top: 0;
+width: 100%;}
+li a:hover {
+  background-color: #0F196E;
+  color: white;}
+@media (max-height: 800px ){
+  h2{font-size: 10px;}}

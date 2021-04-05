@@ -1,0 +1,39 @@
+div {
+    height: 40px;
+    width: 70%;
+    background: black;
+    margin: 50px auto;
+    border-radius: 5px;
+    position: relative;
+  }
+  #rect {
+animation-name: rainbow;
+animation-duration: 4s;
+animation-iteration-count: 3;
+  }
+@keyframes rainbow {
+  0% {background-color: blue; top: 0px;}
+50% {background-color: green; top: 50px;}
+100% {background-color: yellow; top: 0px;}
+}
+button {
+  border-radius: 5px;
+  color: white;
+  background-color: #0F5897;
+  padding: 5px 10px 8px 10px;
+}
+button:hover {
+  animation-name: background-color;
+  animation-duration: 500ms;
+}
+@keyframes background-color {
+100% {background-color: #4791d0;}
+}
+.sr-only {
+  position: absolute;
+  left: -10000;
+  width: 1px;
+  height: 1px;
+  top: auto;
+  overflow: hidden;
+}
