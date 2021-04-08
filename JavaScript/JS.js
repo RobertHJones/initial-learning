@@ -112,4 +112,29 @@ function testGreater(val) {
     }
     return "20 or less";
 }
-testGreater(18);//greater than sign compares two numbers and returns true or false, see example above
+testGreater(18);/*> sign compares two numbers and returns true or false, see example above
+>= is greater than or equal to, and there's also < and <=*/
+function spockLogical(val) {
+    if (val <= 100 && val >=20){
+        return "Yes";
+    }
+    return "No";
+}
+spockLogical(45)//this would be Yes. %% is a way of testing more than one thing at a time, it's only true if both parts are true
+function eitherOR(val) {
+    if (val >40 || val <30) {
+        return "Outside range"
+    }
+    return "Inside range"
+}
+eitherOR(33)/*this is Inside range as it's not >40 or <30. || does either/or, so meeting one of the criteria is enough
+If you want to execute a block of code for the false statement as well as true you can use else*/
+function whoElse(val) {
+var result = "";
+if (val >5) {
+    result = "Bigger than 5";
+} else {
+    return "5 or smaller";
+} return result;
+} whoElse(6); /*like this. You can also chain if and else together
+if X return "X" else if Z return "Z" else return "Y"*/
