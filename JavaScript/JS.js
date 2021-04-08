@@ -12,7 +12,7 @@ var c = "I am a";
 a = a + 1;
 b = b + 2;
 c = c + "man!";
-var addin = 10 + 10;
+var adding = 10 + 10;
 //can use + - * and / ++ for increment (add one) and -- for opposite
 var newVar = 26;
 newVar++;
@@ -49,7 +49,7 @@ var myVerb = "ran";
 var myAdverb = "quickly";
 var wordBlanks = "The hairy " + myNoun + " stood up and " + myVerb + " away from the " + myAdjective + " vulture as " + myAdverb + " as its stubby legs could carry it.";
 var varGnome = ["Limestone pie", "hot melted silver", 5]; //this is an array. Below is nested array
-var varNest = [["Tolstoy", "Orwell", 4], ["Murakami", "Ryo", 7]]//multiple contents. Next up is indexes
+var varNest = [["Tolstoy", "Orwell", 4], ["Murakami", "Ryo", 7]]//multiple contents, can be used for shopping lists etc. Next up is indexes
 var daArray = [15,30,40];
 daArray[1]//this would be 30
 var myData = daArray[2]; //this is 40. Unlike strings, arrays can be changed freely by later code
@@ -60,4 +60,56 @@ var hereWeGo = bigArray[2][1];//this would be 8, 11 would be [3][0][1], 12 would
 var tryPush = [["Ted", 40], ["Dougal", 30,]];
 tryPush.push(["Jack", 70]);//tryPush now has the value[["Ted", 40], ["Dougal", 30], ["Jack", 70]]
 var theArray = [["Jack", 70], ["Dick", 40]];
-var removeFromTheArray = theArray.pop();//theArray's value is now just ["Jack, 70] and remove's value is ["Dick", 40]
+var removeFromTheArray = theArray.pop();/*theArray's value is now just ["Jack, 70] and remove's value is ["Dick", 40]
+.shift does the opposite and removes the first value .unshift does the same as push but at the start*/
+function datFunction() {
+    console.log("Allo World")
+}//now to call/invoke the function I do the below, and that should bring up Allo World in the console
+datFunction();//slightly more complex is passing values to it
+function datArgFunction(paraone, paratwo) {
+    console.log(paraone + paratwo);
+}
+datArgFunction(3, 4);//on the console this would bring up 7, (3+4)
+/*if you set a var within a function it will be local only and cause an error outside the function as it is not defined outside the function
+local vars override global*/
+function subtractSix(num) {
+    return num - 6;
+}//return sends a value back out of the function. Without a return function the returned value is undefined
+var test = subtractSix(10);//This will give the answer 4, if the number was 13 it would be 7, that function is set up to subtract 6. This can be used for + * / as well
+var processed = 0
+function processArg(num) {
+    return (num + 3) / 5;
+}
+processed = processArg(12);//this gives the answer 3: 12+3 is 15, 15/5 = 3.
+function nextInLine(arr, item) {
+    arr.push(item);
+    var removed = arr.shift();
+    return removed;
+}//from FCC this would add a number to the end of the array and remove the first element, item would be a number, arr is an array
+//Boolean data is true or false, basically on/off. e.g.
+function trueTest(wasItTrue) {
+    if(wasItTrue) {
+        return "Es verdad!"
+    }
+    return "Ay, es mentira!"
+}//If a true value is returned the function will return the response in the {}s Es verdad! whereas if it's not true the statement is not executed and mentira is returned
+function testEquality(val) {
+    if (val==12) {
+        return "Equal";
+    }
+    return "Not Equal";
+} testEquality(11);/*this would be false unless the number is 12. JS can compare different data types by converting, so 1=="1" would be true
+Whereas if you use strict equality ===  then it has to be exact, different types will be returned false eg 1 = "1"*/
+typeof 3 // this determines the type, so here it would return number
+typeof "string"//whereas here it would return string
+//the opposite of this is != which is not equal and there is also the strict version !==
+function testGreater(val) {
+    if (val > 80) {
+        return "Over 80";
+    }
+    if (val > 20) {
+        return "Over 20";
+    }
+    return "20 or less";
+}
+testGreater(18);//greater than sign compares two numbers and returns true or false, see example above
