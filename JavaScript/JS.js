@@ -150,5 +150,92 @@ function testSize(num) {
     return "Large"
   } else {
     return "Huge";}
-  }
-  testSize(7);
+  } testSize(7);
+  //below is an example of switch statements, it's like you set up the switch and it has different outcomes based on different variables
+  function caseInSwitch(val) {
+    var answer = "";
+  switch(val) {
+    case 1:
+    return "alpha";
+    break;
+    case 2:
+    return "beta";
+    break;
+    case 3: 
+    return "gamma";
+    break;
+  case 4:
+  return "delta";
+  } return answer;//so whichever number is entered in the function is returned by the switch i.e. in the case of 1 return alpha, in the case of 2 return beta etc
+  } caseInSwitch(1);//you can also set a default to return anything not matching the case statements
+  //Below is an example of giving multiple values to each case
+  function sequentialSizes(val) {
+    var answer = "";
+  switch(val){
+    case 1:
+    case 2:
+    case 3:
+    return "Low";
+    break;
+    case 4:
+    case 5:
+    case 6:
+    return "Mid";
+    break;
+    case 7:
+    case 8:
+    case 9:
+    return "High";
+  } return answer;
+  } sequentialSizes(1);//fairly self-explanatory. Switches can simplify if/else if statements. Below.
+  function chainToSwitch(val) {
+    var answer = "";//it just gives the choices rather than if this else if this etc.
+  switch(val) {
+    case "bob":
+    answer = "Marley";
+    break;
+    case 42:
+    answer = "The Answer";
+    break;
+    case 1:
+    answer = "There is no #1";
+    break;
+    case 99:
+    answer = "Missed me by this much!";
+    break;
+    case 7:
+    answer = "Ate Nine";
+  } return answer;
+  } chainToSwitch(7);//similarly, you can use return for results rather than if/else
+  function isEqual(a,b) {
+    if (a === b) {
+      return true;
+    } else {
+      return false;
+    }
+  }//this can be simplified to below
+  function isEqual(a,b) {
+    return a === b;// this works for <> etc as well, not just ===
+  }//card counting function - this was tricky
+  var count = 0;
+function cc(card) {
+switch (card) {
+  case 2:
+  case 3:
+  case 4:
+  case 5:
+  case 6:
+  count++;//I should try this one again to see if I can do it
+  break;
+  case 10:
+  case 'J':
+  case 'Q':
+  case 'K':
+  case 'A':
+  count--;
+} if (count > 0) {
+  return count + " Bet";
+} else {
+  return count + " Hold";
+}} cc(2); cc(3); cc(7); cc('K'); cc('A');
+
