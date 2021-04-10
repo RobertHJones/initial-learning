@@ -264,4 +264,60 @@ var celloStrings = {
 };
 var playerChoice = "Cstring";
 var cello = celloStrings[playerChoice];//this will return Magnacore
+function phoneticLookup(val) {
+  var result = "";//this part is to create an empty string, where the results are actually returned
+  var lookup = {
+    "alpha": "Adams",
+    "bravo": "Boston",
+    "charlie": "Chicago",
+    "delta": "Denver",
+    "echo": "Easy",
+    "foxtrot": "Frank",
+  }; return lookup[val]
+  return result;
+} phoneticLookup("charlie");//this is using an object to look up values rather than else if or switch
+//you can check the property of a given object using .hasOwnProperty. This one was confusing so look at it again
+function checkObj(obj, checkProp) {
+  if(obj.hasOwnProperty(checkProp)) {
+    return obj[checkProp];
+  } else {
+  return "Not Found";
+  }//so here if the obj matches the corresponding checkProp it will return the obj, otherwise it'll return Not Found
+}//now for a complex data structure
+var myMusic = [
+  {
+    "artist": "Kyuss",
+    "title": "Welcome to Sky Valley",
+    "release_year": 1994,
+    "formats": [
+      "CD",
+      "8T",
+      "LP"
+    ],
+    "gold": false
+  },//don't forget the comma in between!
+  {  
+    "artist": "Pink Floyd",
+    "title": "Wish you were Here",
+    "release_year": 1975,
+    "formats": [
+      "CD",
+      "LP",
+      "MP3"
+    ],
+    "gold": true
+  }
+];//now this below is how to assign the contents of the glove box to gloveBoxContents. Glove box is in brackets because you can only use dot notation for single words
+var myStorage = {
+  "car": {
+    "inside": {
+      "glove box": "maps",
+      "passenger seat": "crumbs"
+     },
+    "outside": {
+      "trunk": "jack"
+    }
+  }
+};
+var gloveBoxContents = myStorage.car.inside["glove box"];
 
