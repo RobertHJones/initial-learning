@@ -4,7 +4,7 @@ see? */
 var thisBeVar;
 thisBeVar = 5;
 var moVar;
-moVar = thisBeVer;
+moVar = thisBeVar;
 //but it's better to do it all in one line as below
 var a = 9;
 var b = 10;
@@ -238,4 +238,30 @@ switch (card) {
 } else {
   return count + " Hold";
 }} cc(2); cc(3); cc(7); cc('K'); cc('A');
+//similar to arrays are objects, where their data is accessed through properties
+var myWolf = {
+  "name": "Fangy Pete",
+  "teeth": 80,
+  "attitude": "hostile",
+  "enemies": ["animal", "mineral", "vegetable"]//to update an object's property see below
+}; myWolf.name = "Very Fangy Pete"//you can also add new properties this way or delete ones
+myWolf.howl = "Ooowwwwwww"
+delete myWolf.teeth;
+//dot notation is a way to access the properties of an object when you know the name of the property
+var sampleObject = {
+  "back": "camel",
+  "core": "boat pose",
+  "hip": "lotus",
+};
+var backValue = sampleObject.back;
+var hipValue = sampleObject.hip;/*if the property of the object you are accessing has a space you'll need to use bracket notation
+but you can also use it on object properties without spaces. Example below*/
+var coreValue = sampleObject["boat pose"];// you can also use variables to access properties
+var celloStrings = {
+  Astring: "Perpetual",
+  Gstring: "Spirocore",
+  Cstring: "Magnacore"
+};
+var playerChoice = "Cstring";
+var cello = celloStrings[playerChoice];//this will return Magnacore
 
