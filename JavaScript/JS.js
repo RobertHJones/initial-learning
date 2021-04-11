@@ -120,7 +120,7 @@ function spockLogical(val) {
     }
     return "No";
 }
-spockLogical(45)//this would be Yes. %% is a way of testing more than one thing at a time, it's only true if both parts are true
+spockLogical(45)//this would be Yes. && is a way of testing more than one thing at a time, it's only true if both parts are true
 function eitherOR(val) {
     if (val >40 || val <30) {
         return "Outside range"
@@ -319,5 +319,52 @@ var myStorage = {
     }
   }
 };
-var gloveBoxContents = myStorage.car.inside["glove box"];
-
+var gloveBoxContents = myStorage.car.inside["glove box"];//objects can have both nested objects and nested arrays like below
+var someGames = [ 
+  { type: "FPS",
+  list: [
+    "Titanfall 2",
+    "DOOM",
+    "Halo"
+  ]
+},
+{ type: "RTS",
+list: [
+  "RA2",
+  "Plantary Annihilation",
+  "Total Annihilation"
+]
+}
+]; var secondRTS = someGames[1].list[1];//this should return PA. Below is how to return the record collection.
+var collection = {
+  2548: {
+    albumTitle: 'Slippery When Wet',
+    artist: 'Bon Jovi',
+    tracks: ['Let It Rock', 'You Give Love a Bad Name']
+  },//I should do this one again to practice
+  2468: {
+    albumTitle: '1999',
+    artist: 'Prince',
+    tracks: ['1999', 'Little Red Corvette']
+  },
+  1245: {
+    artist: 'Robert Palmer',
+    tracks: []
+  },
+  5439: {
+    albumTitle: 'ABBA Gold'
+  }
+};
+function updateRecords(object, id, prop, value) {
+  if (prop !== 'tracks' && value !== "") {
+    object[id][prop] = value;
+  } else if (prop === "tracks" && object[id].hasOwnProperty("tracks") === false) {
+    object[id][prop] = [value];
+  } else if (prop === "tracks" && value !== "") {
+    object[id][prop].push(value);
+  } else if (value === "") {
+    delete object[id][prop];
+  }
+  return object;
+}
+updateRecords(collection, 5439, 'artist', 'ABBA');
