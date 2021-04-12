@@ -367,4 +367,18 @@ function updateRecords(object, id, prop, value) {
   }
   return object;
 }
-updateRecords(collection, 5439, 'artist', 'ABBA');
+updateRecords(collection, 5439, 'artist', 'ABBA');//this needs assimilating
+//Loop. This is a while loop, which runs when a specified condition is true and stops when it is no longer true
+var daLoop = [];
+var k = 4;
+while(k >= 0); {
+daLoop.push(i);
+k--;}//this will return [4,3,2,1,0] another way is the for loop, which runs for a certain amount of time
+var anotherLoop = [];
+for (var m = 1; m < 6; m++) {
+  anotherLoop.push(m);//this will return [1,2,3,4,5]
+}//it doesn't have to increment, you can increase in other ways like below
+var thirdLoop = [];
+for (var t = 1; 1 < 10; t += 2) {
+  thirdLoop.push(t);
+}//this will return [1,3,5,7,9]
