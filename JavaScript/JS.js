@@ -387,14 +387,30 @@ var myArr = [ 2, 3, 4, 5, 6];
 var total = 0;
 for (var i = 0; i <= 4; i++) {
  total += myArr[i];
-}
+}//this will produce 20 (sum of the numbers of the array)
 //nesting loops, through the array and sub-arrays
 function multiplyAll(arr) {
   var product = 1;//so it starts on one
 for (var i = 0; i < arr.length; i++)//0 is the first array
 for (var j = 0; j < arr[i].length; j++)//array within an array so we need j
 product *= arr[i][j];
-  return product;
+  return product;//this will multiply all the numbers together
 }
-
 multiplyAll([[1,2],[3,4],[5,6,7]]);
+//there's also a do...while loop which will always execute the first part of the code
+var doWhile = [];
+var i = 10
+do {
+  doWhile.push(i);
+  i++;
+} while (i < 10);//so this will only run once and return [10]
+//recusion replaces loops by expressing the function in terms of itself...kinda confusing
+function sum(arr, n) {
+if (n <= 0) {
+  return 0;
+} else {
+  return sum (arr, n - 1) + arr[n - 1];
+}//this returns the sum of the first elements of an array arr
+}/*sum([1], 0) should equal 0.
+sum([2, 3, 4], 1) should equal 2.
+sum([2, 3, 4, 5], 3) should equal 9. so arr value is 1st part and n is 3. I think it's (3+2) + [4] */
