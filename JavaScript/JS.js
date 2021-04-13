@@ -382,3 +382,19 @@ var thirdLoop = [];
 for (var t = 1; 1 < 10; t += 2) {
   thirdLoop.push(t);
 }//this will return [1,3,5,7,9]
+//next up iterate through an array with a for loop
+var myArr = [ 2, 3, 4, 5, 6];
+var total = 0;
+for (var i = 0; i <= 4; i++) {
+ total += myArr[i];
+}
+//nesting loops, through the array and sub-arrays
+function multiplyAll(arr) {
+  var product = 1;//so it starts on one
+for (var i = 0; i < arr.length; i++)//0 is the first array
+for (var j = 0; j < arr[i].length; j++)//array within an array so we need j
+product *= arr[i][j];
+  return product;
+}
+
+multiplyAll([[1,2],[3,4],[5,6,7]]);
