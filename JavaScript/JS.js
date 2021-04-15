@@ -414,3 +414,53 @@ if (n <= 0) {
 }/*sum([1], 0) should equal 0.
 sum([2, 3, 4], 1) should equal 2.
 sum([2, 3, 4, 5], 3) should equal 9. so arr value is 1st part and n is 3. I think it's (3+2) + [4] */
+//now below is looking up specific information within profiles. Need to work it out better
+var contacts = [
+  {
+      "firstName": "Akira",
+      "lastName": "Laine",
+      "number": "0543236543",
+      "likes": ["Pizza", "Coding", "Brownie Points"]
+  },
+  {
+      "firstName": "Harry",
+      "lastName": "Potter",
+      "number": "0994372684",
+      "likes": ["Hogwarts", "Magic", "Hagrid"]
+  },
+  {
+      "firstName": "Sherlock",
+      "lastName": "Holmes",
+      "number": "0487345643",
+      "likes": ["Intriguing Cases", "Violin"]
+  },
+  {
+      "firstName": "Kristian",
+      "lastName": "Vos",
+      "number": "unknown",
+      "likes": ["JavaScript", "Gaming", "Foxes"]
+  }
+];
+function lookUpProfile(name, prop){
+for (let i = 0; i < contacts.length; i++) {
+  if (contacts[i].firstName === name) {
+      if (prop in contacts[i]) {
+          return contacts[i][prop];
+      } else {
+          return "No such property"
+      }
+  }
+}
+  return "No such contact";
+}
+lookUpProfile("Akira", "likes");
+//moving on, to return a random number between 0 and not quite 1, use below
+function randomNumber() {
+  return Math.random();
+}//you can use Math.Floor to round the number down, as you can never get a whole number if you * by something
+function randomWholeNumber () {
+  return Math.floor(Math.random() * 10);
+}//we can return a random whole number between two specific numbers as below
+function randomRange (mininum, max) {
+  return Math.floor(Math.random() * (max - mininum + 1)) + minimum;
+}//eg minimum is 1 and max is 10, and the random decibel is 0.5. 10 - 1 + 1 = 8, 8 * 0.5 is 4, 4 + 1 is 5
