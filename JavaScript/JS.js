@@ -464,3 +464,36 @@ function randomWholeNumber () {
 function randomRange (mininum, max) {
   return Math.floor(Math.random() * (max - mininum + 1)) + minimum;
 }//eg minimum is 1 and max is 10, and the random decibel is 0.5. 10 - 1 + 1 = 8, 8 * 0.5 is 4, 4 + 1 is 5
+//moving on again, to parse a string and return an integer you can use parseInt()
+function convertToInteger(str) {
+  return parseInt(str);
+  }
+  convertToInteger("56");/*you can enter a 2nd argument in parseInt, which is the radix. This defines what
+  base the number system it is converting to an integer. So 2 would convert it from binary range is 2-36*/
+  function convertToInteger(str) {
+    return parseInt(str, 2)
+    }
+    convertToInteger("10011");//this would return 19
+    /*the conditional or ternary operator is a way of doing an if else statement in one line
+    the syntax is a ? b : c. a is the condition, b is the code for true, c is the code for false*/
+    function checkEqual(a, b) {
+      return a === b ? "Equal" : "Not Equal";
+      }
+      checkEqual(1, 2);//so if they're equal "Equal is returned", if not "Not Equal" is returned
+      //you can also chain these together as below
+      function checkSign(num) {
+        return num > 0 ? "positive"
+        : num < 0 ? "negative"
+        : "zero";
+        }
+        checkSign(10);//this should be self explanatory but basically, positive number returns "positive", negative returns "negative" and 0 returns "zero"
+//using recursion to create a countdown or countup
+function countdown(n){
+  if (n < 1) {
+    return [];
+  } else {
+    const countArray = countdown(n - 1);
+    countArray.unshift(n);
+  return countArray;
+  }
+}//this returns an array counting down from n to 1 eg n = 3 returns [3, 2, 1]. If it was .push it would be counting up 
