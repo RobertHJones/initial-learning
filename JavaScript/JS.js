@@ -497,3 +497,13 @@ function countdown(n){
   return countArray;
   }
 }//this returns an array counting down from n to 1 eg n = 3 returns [3, 2, 1]. If it was .push it would be counting up 
+//we can also create a range with two parameters represented by startNum and endNum
+function rangeOfNumbers(startNum, endNum) {
+  if (endNum - startNum === 0) { //so this means it only returns one number if they're equal
+    return [startNum];
+  } else {
+    var numbers = rangeOfNumbers(startNum, endNum - 1);
+    numbers.push(endNum);
+  return numbers;
+  }
+};//otherwise we get an array eg startNum is 2 and endNum is 6 we get [2, 3, 4, 5, 6]
