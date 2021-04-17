@@ -507,3 +507,21 @@ function rangeOfNumbers(startNum, endNum) {
   return numbers;
   }
 };//otherwise we get an array eg startNum is 2 and endNum is 6 we get [2, 3, 4, 5, 6]
+//let is like var but returns an error instead of letting you override previous code, so
+var myNameIs = "Robert"
+var myNameIs = "Tab"//myNameIs has been overriden to Tab
+let daNameIs = "Robert"
+let daNameIs = "Tab"//whereas this will return an error as there can't be two. You can enable Strict Mode as below
+"use strict";//strict mode catches common coding mistakes and "unsafe" actions
+/*another difference when declaring globally or locally, when let is declared locally (within a function say)
+it won't appear globally*/
+//const is similar to let but it is read-only which means once a value is assigned, it cannot be reassigned and will return an error if reassignment is attempted
+//common practice is to name const with all CAPS
+//so you'd use let in a function eg let i = 0 etc, as with const it can't change value
+const s = [5, 7, 2];
+function editInPlace() {
+  s[0] = 2
+  s[1] = 5
+  s[2] = 7
+}
+editInPlace();//so this will now return [2, 5, 7]
