@@ -525,3 +525,26 @@ function editInPlace() {
   s[2] = 7
 }
 editInPlace();//so this will now return [2, 5, 7]
+//so const doesn't protect data from mutation, to do this you need Object.freeze
+let mrFreeze = {
+  name: "Mr Freeze",
+  temperature: "Cold"
+}; Object.freeze(mrFreeze);
+mrFreeze.temperature = "Hot";
+mrFreeze.weapon = "Freeze ray";
+console.log(mrFreeze);//Hot and Freeze ray will result in errors and Mr Freeze will remain Cold
+//arrow functions can make functions more concise
+const discoStu = function() {
+  const discoMusic = "Dance";
+  return discoMusic;
+}//this can be simplified as below to remove the function
+const discoStu = () => {
+  const discoMusic = "Dance";
+  return discoMusic;
+}//when there is no function body and only a return value you can also omit return and brackets as below
+const discoStu = () => "Dance";
+//you can also pass arguments into an arrow function (x * y  etc)
+const multiMulti = (low, high) => low * high;
+multiMulti(3, 13)//would return 39
+//ES6 also allows for default parameters in functions
+const increMental = (number, value = 1) => number + value;//if value is not specific it will count as 1
