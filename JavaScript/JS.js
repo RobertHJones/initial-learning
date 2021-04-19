@@ -548,3 +548,30 @@ const multiMulti = (low, high) => low * high;
 multiMulti(3, 13)//would return 39
 //ES6 also allows for default parameters in functions
 const increMental = (number, value = 1) => number + value;//if value is not specific it will count as 1
+//rest parameter ... creates functions that take a variable number of arguments, so the below
+const daSum = (x, y, z) => {
+  const args = [x, y, z];
+  return args.reduce((a, b) => a + b, 0)
+}//can be simplified to
+const sum = (...args) => {
+  return args.reduce((a, b) => a + b, 0);
+}//...also works as the spread operator, to expand (or spread) arrays, it returns an unpacked array
+//Destructuring assignment is handy for assiging values taken directly from an object
+const user = { name: "Tab Jones", age: 80 };
+const name = user.name;
+const age = user.age;//this can be simplified as below
+const { name, age } = user;//or you can give new variable names like below
+const { name: userName, age: userAge } = user;//this also works with nested objects, see below comparison
+const LOCAL_FORECAST = {
+  yesterday: { low: 61, high: 75 },
+  today: { low: 64, high: 77 },
+  tomorrow: { low: 68, high: 80 }
+};//above is simplified to below (lowToday and highToday are new variable names, it would work without)
+const { today: { low: lowToday, high: highToday }} = LOCAL_FORECAST;
+//this is a way of destructuring an array collecting the rest of the elements in a separate array
+const source = [1,2,3,4,5,6,7,8,9,10];
+function removeFirstTwo(list) {
+  const [a, b, ...arr] = list; 
+  return arr;
+}
+const arr = removeFirstTwo(source);
