@@ -575,3 +575,74 @@ function removeFirstTwo(list) {
   return arr;
 }
 const arr = removeFirstTwo(source);
+//destructure the object in a function argument itself
+const stats = {
+  max: 56.78,
+  standard_deviation: 4.34,
+  median: 34.54,
+  mode: 23.87,
+  min: -0.75,
+  average: 35.85
+};
+const half = (stats) => (stats.max + stats.min) / 2.0;// this is simplified to below
+const half = ({max, min}) => (max + min) / 2.0; 
+//template literals, can insert variables within strings using ${}. Needs to be within ` not " or '
+const result = {
+  success: ["max-length", "no-amd", "prefer-arrow-functions"],
+  failure: ["no-var", "var-on-top", "linebreak"],
+  skipped: ["no-extra-semi", "no-dup-keys"]
+};
+function makeList(arr) {
+   const failureItems = [];
+  for (let i = 0; i < arr.length; i++) {
+    failureItems.push(`<li class="text-warning">${arr[i]}</li>`);
+  }
+  return failureItems;
+}//so this iterates to get the relevannt failure message within the string
+const failuresList = makeList(result.failure);
+//object property shorthand can make literal declarations more concise, rather than this
+const createPerson = (name, age, gender) => {
+  return {
+    name: name,
+    age: age,
+    gender: gender
+  };
+};//we can shorthand to this
+const createPerson = (name, age, gender) => {
+  return ( { name, age, gender });
+};//in ES6 you can make functions more concise by removing the function keyword and colon
+const bicycle = {
+  gear: 2,
+  setGear: function(newGear) {
+    this.gear = newGear;
+  }
+};
+bicycle.setGear(3);
+console.log(bicycle.gear);//this is before
+
+const bicycle = {
+  gear: 2,
+  setGear(newGear) {
+    this.gear = newGear;
+  }
+};
+bicycle.setGear(3);
+console.log(bicycle.gear);//and this is after
+//you can use class syntax to create objects, it replaces the constructor function, so this
+var SpaceShuttle = function(targetPlanet){
+  this.targetPlanet = targetPlanet;
+}
+var zeus = new SpaceShuttle('Jupiter');//would become
+class SpaceShuttle {
+  constructor(targetPlanet) {
+    this.targetPlanet = targetPlanet;
+  }
+}
+const zeus = new SpaceShuttle('Jupiter');//another example is below
+class Vegetable {
+  constructor(name) {
+    this.name = name
+  }
+}
+const carrot = new Vegetable('carrot');
+console.log(carrot.name); // Should display 'carrot'
