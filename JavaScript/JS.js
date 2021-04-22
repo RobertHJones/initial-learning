@@ -646,3 +646,26 @@ class Vegetable {
 }
 const carrot = new Vegetable('carrot');
 console.log(carrot.name); // Should display 'carrot'
+/*getters and setters
+getters obtain values from an object, setters set the value of a property within the object*/
+class Thermostat {
+  constructor(heat) {
+    this.heat = heat
+  }
+  get temperature() {
+    return 5/9 * (this.heat - 32); //this converts the farenheit reading to celsius
+  }
+  set temperature(celsius) {
+    this.heat = celsius * 9 / 5 + 32; //this converts the celsius reading to farenheit
+  }//all fairly self-explanatory
+}
+const thermos = new Thermostat(76); // Setting in Fahrenheit scale
+let temp = thermos.temperature; // 24.44 in Celsius
+thermos.temperature = 26;
+temp = thermos.temperature; // 26 in Celsius
+//module script - this is HTML code that enables the stuffs I'm about to learn
+/*<html>
+  <body>
+<script type = "module" src="index.js"></script>
+  </body>
+</html> */
