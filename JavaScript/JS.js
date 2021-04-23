@@ -669,3 +669,65 @@ temp = thermos.temperature; // 26 in Celsius
 <script type = "module" src="index.js"></script>
   </body>
 </html> */
+//you can export functions from a file to use in different files, you can put export at the start of anything you want to export like below
+export const add = (x, y) => {
+  return x + y;
+} //but a better way is to do an export statement, you can add multiple functions to this
+const uppercaseString = (string) => {
+  return string.toUpperCase();
+}
+const lowercaseString = (string) => {
+  return string.toLowerCase()
+}
+export { uppercaseString, lowercaseString };
+//importing is similar, you just need the file pathway - ./ tells the import to look in the same folder as the current file
+import { uppercaseString, lowercaseString } from './string_functions.js';  
+uppercaseString("hello");
+lowercaseString("WORLD!");
+/*you can import all contents from a file using import *. This will create an object which contains all the exports from
+the file in it meaning you can access this file's functions like any other object property, as below*/
+import * as stringFunctions from "./string_functions.js";
+stringFunctions.uppercaseString("hello");
+stringFunctions.lowercaseString("WORLD!"); 
+//you can also use export default, which is also used to create a fallback value. You use this if only one value is being exported
+export default function subtract(x, y) {
+  return x - y;
+} //a benefit of default is when you import the function you don't need to use {}s
+import subtract from "./math_functions.js";
+subtract(7,4);
+//promise is used as a constructor function with 2 parameters - resolve and reject. makeServerRequest is the only bit that could change name
+const makeServerRequest = new Promise((resolve, reject) => {});//this is not complete so stuck in pending stage
+//it works like a function, as below
+const breakStyleOverload = new Promise((resolve, reject) => {
+  let breakStyleResponse;
+  if (breakStyleResponse) {
+    resolve("Fatty K");
+  } else {
+    reject("Shottas");
+  }//this has returned strings, but it could return anything such as objects
+});
+//can use .then to handle a fulfilled promise
+const breastMilky = new Promise((resolve, reject) => {
+  //responseMilky is set to true representing a successful response from a server
+  let responseMilky = true;
+  breastMilky.then(result => {
+  });
+  console.log(result)//this logs result to the console
+  if(responseMilky) {
+    resolve("Marmalade");
+  } else {
+    reject ("Los Angeles");
+  }
+});//.catch is used to handle a rejected promise, see the same code as above but with false
+const breastMilky = new Promise((resolve, reject) => {
+  //responseMilky is set to false representing a successful response from a server
+  let responseMilky = false;
+  breastMilky.catch(error => {
+  });
+  console.log(error)//this logs error to the console
+  if(responseMilky) {
+    resolve("Marmalade");
+  } else {
+    reject ("Los Angeles");
+  }
+});
