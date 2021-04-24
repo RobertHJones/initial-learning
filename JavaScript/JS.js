@@ -731,3 +731,60 @@ const breastMilky = new Promise((resolve, reject) => {
     reject ("Los Angeles");
   }
 });
+//you can use .test() to find a word within a string
+let myString = "Hello, World!";
+let myRegex = /Hello/;
+let result = myRegex.test(myString); //this would return true
+//it needs to be a literal match, hello or HELLO wouldn't work
+// to search for multiple patterns you can use |, as below
+let petString = "James has a pet cat.";
+let petRegex = /dog|cat|bird|fish/;//this will return true if any of these pets are in the string
+let result = petRegex.test(petString);
+// to ignore case you can use i like this /example/i. This would return true for Example or examPLE etc.
+let myString = "freeCodeCamp";
+let fccRegex = /freecodecamp/i;
+let result = fccRegex.test(myString); // this is true
+/*to actually extract the match you can use .match
+match syntax is the opposite of test*/
+'string'.match(/regex/);
+/regex/.test('string');
+let extractJackson = "Extract the word Jackson from this string.";
+let jacksonRegex = /Jackson/;
+let result = extractJackson.match(jacksonRegex);// this should extract Jackson
+//you can use g to find more than the first match
+let twinkleStar = "Twinkle, twinkle, little star";
+let starRegex = /twinkle/gi;
+let result = twinkleStar.match(starRegex); //this would return both twinkles
+/* . is wildcard like on SITS, although unlike SITS it can go before or after
+/hu./ would return hum hug etc, /.un/ would return fun sun run etc*/
+//if you want to only find a specific set of characters you can put them inside []s
+let daQuote = "Hey, did you see Chris Hoy ride through the hay?";
+let vowelRegex = /h[aeo]y/i;
+let result = daQuote.match(vowelRegex); //this would return Hey Hoy and hay
+//you can match a group of letters by using -, so [a-n] would match letters a to n
+let quoteSample = "The quick brown fox jumps over the lazy dog.";
+let alphabetRegex = /[a-z]/gi; 
+let result = quoteSample.match(alphabetRegex); // this returns all the letters including repeats
+// - also works for numbers like [4-9] etc. You can combine letters and numbers like this [f-p1-8]
+let quoteSample = "Blueberry 3.141592653s are delicious.";
+let myRegex = /[h-s2-6]/gi;
+let result = quoteSample.match(myRegex); 
+//if you want to find characters that don't match your search you can use ^
+let quoteSample = "3 blind mice.";
+let myRegex = /[^aeiou0-9]/gi;
+let result = quoteSample.match(myRegex); // this would return blnd mc. (including special characters like .)
+/* you can use + character to match a character or group of characters that appears one or more times in a row
+so it would return ["aa"] for aabc but ["a", "a"] for abab as there is a b between them*/
+let difficultSpelling = "Mississippi";
+let myRegex = /s+/g;
+let result = difficultSpelling.match(myRegex);
+//to match characters that appear 0 or more times you use * like /go*/
+let chewieRegex = /Aa*/;
+let result = chewieQuote.match(chewieRegex);
+/*assuming cheweiQuote is Aaaaaaaargh!, this would return Aaaaaaaa
+lazy matching - finds the shortest possible match rather than the default greedy which finds the longest
+this uses the ? sign*/
+let text = "<h1>Winter is coming</h1>";
+let myRegex = /<h[a-z]*?1>/; // this will return <h1>, the ? means it won't return any of the [a-z] because lazy
+let result = text.match(myRegex);
+
