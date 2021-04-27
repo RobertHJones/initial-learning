@@ -787,4 +787,62 @@ this uses the ? sign*/
 let text = "<h1>Winter is coming</h1>";
 let myRegex = /<h[a-z]*?1>/; // this will return <h1>, the ? means it won't return any of the [a-z] because lazy
 let result = text.match(myRegex);
+//Using ^ outside of []s will search for patterns at the beginning of strings
+let firstSebulba = "Sebulba is first.";
+let regexSebulba = /^Sebulba/;
+regexSebulba.test(firstSebulba); // this will return true
+let alwaysWins = "He always wins. Sebulba.";
+regexSebulba.test(alwaysWins); // this will be false
+//the opposite is $ which searches for patterns at the end of strings and goes after the term /example$/
+/* \w searches for all, shorthand for [A-Za-z0-9_]
+\W does the opposite and searches for everything except the above*/
+// \d is for all numbers
+// \D does everything except numbers
+// \s searches for whitespace, including carriage return, tab, form feed, and new line characters, could think of it as [ \r\t\f\n\v]
+// again \S does the opposite, everything except whitespace
+/* you can specify the amount of times you want a character to appear with a range in {}s, like /Oh{3,6} no/
+this returns Ohhh no, to Ohhhhhh no*/
+// this doesn't have to have an upper or lower limit, you can leave it out like {4,} to do anything higher than 4
+// to do a specific number you leave out the comma, like {4}
+// ? after a character makes it option, like /favou?rite/ to get either British or US spelling of favourite
+// positive lookup (?=...) ...is the required part, like /(?=\w{6,})
+// negative lookup (?!...) ...is the part you don't want to be there
+// we can check for groups of characters using regex using () see below example
+let myString = "Eleanor Roosevelt";
+let myRegex = /(Franklin|Eleanor) .*Roosevelt/gi;
+let result = myRegex.test(myString); // .* allows for middle names, has to go next to Roosevelt, no space
+//you can use .replace() to search for and replace text
+let hello = "   Hello, World!  ";
+let wsRegex = /^\s+|\s+$/g; // so this removes whitespace at the start or at the end
+let result = hello.replace(wsRegex, "");
+//when using console.log() you can insert typeof to determine the type of a variable
+let seven = 7;
+let three = "3";
+console.log(typeof seven); //this is a number
+console.log(typeof three); //this is a string
+// .splice is like .push .pop etc except it can start anywhere and do consecutive
+const arr = [2, 4, 5, 1, 7, 5, 2, 1];
+let newArray = arr.splice(1, 4);
+console.log(arr);
+// this would return [ 2, 5, 2, 1 ], as it removes 4, 5, 1, 7, from the array
+// the first parameter is where it starts, and the second is how many it removes
+// the third parameter adds values in 
+const numbers = [10, 11, 12, 12, 15];
+const startIndex = 3;
+const amountToDelete = 1;
+numbers.splice(startIndex, amountToDelete, 13, 14);
+console.log(numbers);// this would return [10, 11, 12, 13, 14, 15]
+//
+function htmlColorNames(arr) {
+arr.splice(0, 2, 'DarkSalmon', 'BlanchedAlmond');
+  return arr;
+}
+console.log(htmlColorNames(['DarkGoldenRod', 'WhiteSmoke', 'LavenderBlush', 'PaleTurquoise', 'FireBrick']));
+// this replaces the first two with the alternatives entered
+// .slice() copies elements to a new array up to but not including the 2nd number
+function forecast(arr) {
+  return arr.slice(2, 4);
+}
+console.log(forecast(['cold', 'rainy', 'warm', 'sunny', 'cool', 'thunderstorms']));
+//this returns ['warm', 'sunny'] - elements 2 up to 4 not inclusive
 
