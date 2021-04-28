@@ -845,4 +845,65 @@ function forecast(arr) {
 }
 console.log(forecast(['cold', 'rainy', 'warm', 'sunny', 'cool', 'thunderstorms']));
 //this returns ['warm', 'sunny'] - elements 2 up to 4 not inclusive
+// you can use ... to insert all elements, this is the spread operator
+function spreadOut() {
+  let fragment = ['to', 'code'];
+  let sentence = ['learning', ...fragment, 'is', 'fun'];
+  return sentence;
+}
+console.log(spreadOut()); // learning to code is fun
+// indexOf checks for the presence of an element in an array
+let fruits = ['apples', 'pears', 'oranges', 'peaches', 'pears'];
 
+fruits.indexOf('dates'); // returns -1
+fruits.indexOf('oranges'); // returns 2
+fruits.indexOf('pears'); // returns 1 as this is the first occurance of it
+// a more complicated use of this below
+function quickCheck(arr, elem) {
+if 
+(arr.indexOf(elem) >= 0){
+  return true
+}
+else {
+  return false
+};
+}
+console.log(quickCheck(['squash', 'onions', 'shallots'], 'mushrooms'));
+// so if the element is found in the array it returns true, otherwise it returns false
+//arrays can go very deep, the one below is 5 levels deep, it's just using random info
+let myNestedArray = [
+  ['unshift', false, 1, 2, 3, 'complex', 'nested'],
+  [
+  ['loop', 'shift', 6, 7, 1000, 'method'], ['boom', 'bang', 35]
+  ],
+  [    
+  ['concat', false, true, 'spread', 'deep', 'array'], ['more', 'but', 356]],
+  [[
+  ['mutate', 1327.98, 'splice', 'slice', 'deeper', 'push'], [68, 24, 'numb']]],
+  [[[
+  ['iterate', 1.3849, 7, '8.4876', 'deepest', 'arbitrary', 'depth'], ['sonnet', 'sonic', 58]]]]
+];
+// dot notation can span levels as below
+let userActivity = {
+  id: 23894201352,
+  date: 'January 1, 2017',
+  data: {
+    totalUsers: 51,
+    online: 42
+  }
+};
+userActivity.data.online = 45;
+console.log(userActivity);
+// you can use delete to remove values from an object
+let foods = {
+  apples: 25,
+  oranges: 32,
+  plums: 28,
+  bananas: 13,
+  grapes: 35,
+  strawberries: 27
+};
+delete foods.oranges;
+delete foods.plums;
+delete foods.strawberries;
+console.log(foods); // this will only return { apples: 25, bananas: 13, grapes: 35 }
