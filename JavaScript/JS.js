@@ -404,7 +404,7 @@ do {
   doWhile.push(i);
   i++;
 } while (i < 10);//so this will only run once and return [10]
-//recusion replaces loops by expressing the function in terms of itself...kinda confusing
+//recursion replaces loops by expressing the function in terms of itself...kinda confusing
 function sum(arr, n) {
 if (n <= 0) {
   return 0;
@@ -501,7 +501,7 @@ function countdown(n){
 function rangeOfNumbers(startNum, endNum) {
   if (endNum - startNum === 0) { //so this means it only returns one number if they're equal
     return [startNum];
-  } else {
+  } else {  
     var numbers = rangeOfNumbers(startNum, endNum - 1);
     numbers.push(endNum);
   return numbers;
@@ -598,7 +598,7 @@ function makeList(arr) {
     failureItems.push(`<li class="text-warning">${arr[i]}</li>`);
   }
   return failureItems;
-}//so this iterates to get the relevannt failure message within the string
+}//so this iterates to get the relevant failure message within the string
 const failuresList = makeList(result.failure);
 //object property shorthand can make literal declarations more concise, rather than this
 const createPerson = (name, age, gender) => {
@@ -907,3 +907,89 @@ delete foods.oranges;
 delete foods.plums;
 delete foods.strawberries;
 console.log(foods); // this will only return { apples: 25, bananas: 13, grapes: 35 }
+// if you want to use .hasOwnProperty() you need to assign every value, as below
+let users = {
+  Alan: {
+    age: 27,
+    online: true
+  },
+  Jeff: {
+    age: 32,
+    online: true
+  },
+  Sarah: {
+    age: 48,
+    online: true
+  },
+  Ryan: {
+    age: 19,
+    online: true
+  }
+}; // below is the bit I worked out
+function isEveryoneHere(obj) {
+ if (obj.hasOwnProperty('Alan') && obj.hasOwnProperty('Jeff') && obj.hasOwnProperty('Sarah') && obj.hasOwnProperty('Ryan')) {
+  return true
+ } else {
+    return false
+  };
+}
+console.log(isEveryoneHere(users));
+// as well as has own property you can use in which comes up with an item within an object
+function countOnline(usersObj) {
+let result = 0;
+for (let user in usersObj) {
+if (usersObj[user].online === true) {
+  result++;
+}
+}
+  return result
+}
+// this is to return the number of users whose online property is set to true, like below
+{
+  Alan: {
+    online: false
+  }
+  Jeff: {
+    online: true
+  }
+  Sarah: {
+    online: false
+  }
+} // this would return 1
+//  Object.keys() can contain all the keys stored in an object, like so
+let users = {
+  Alan: {
+    age: 27,
+    online: false
+  },
+  Jeff: {
+    age: 32,
+    online: true
+  },
+  Sarah: {
+    age: 48,
+    online: false
+  },
+  Ryan: {
+    age: 19,
+    online: true
+  }
+};
+function getArrayOfUsers(obj) {
+return Object.keys(obj)
+}
+console.log(getArrayOfUsers(users));
+// this returns [ 'Alan', 'Jeff', 'Sarah', 'Ryan' ]
+// to reverse a string you can use .split .reverse and then .join
+function reverseString(str) {
+  return str.split ("").reverse().join("");
+}
+reverseString("hello"); // this returns olleh
+// script to factorialise a number 
+function factorialize(num) {
+  let total = 1
+  for (let i = 1; i<= num; i++)
+  total *= i;
+  return total;
+}
+factorialize(5);
