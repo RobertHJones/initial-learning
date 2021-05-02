@@ -993,3 +993,93 @@ function factorialize(num) {
   return total;
 }
 factorialize(5);
+// should have done objects elsewhere but one thing is you can create a new object with the same properties
+function Dog() { // <--- constructor function
+  this.name = "Rupert";
+  this.color = "brown";
+  this.numLegs = 4;
+}
+let hound = new Dog(); // hound has all the same properties as dog, which can be accesed in the same way
+// or you can set the base properties in advance to save time
+function Dog(name, color) {
+  this.name = name;
+  this.color = color;
+  this.numLegs = 4;
+  }
+  let terrier = new Dog ("Doodoo", "blue");
+// you can use instanceof to check if an object was created by a constructor (an instance of the constructor)
+function House(numBedrooms) {
+  this.numBedrooms = numBedrooms;
+}
+let myHouse = new House(2);
+myHouse instanceof House // this returns true
+// following code adds the properties of an object to an array
+function Bird(name) {
+  this.name = name;
+  this.numLegs = 2;
+}
+let canary = new Bird("Tweety");
+let ownProps = [];
+for (let property in canary) {
+  if(canary.hasOwnProperty(property)) {
+    ownProps.push(property);
+  }
+}// this would return ["name", "numlegs"]
+// you can use prototype to define an object's property so that it stays without needing to be duplicated
+function Dog(name) {
+  this.name = name;
+}
+Dog.prototype.numLegs = 4;
+let beagle = new Dog("Snoopy"); // everything created from the Dog constructor now has 4 legs
+// similar to adding the properties of an object to an array, if it has a prototype you do it as below
+function Dog(name) {
+  this.name = name;
+}
+Dog.prototype.numLegs = 4;
+let beagle = new Dog("Snoopy");
+let ownProps = [];
+let prototypeProps = [];
+for (let property in beagle) {
+  if(beagle.hasOwnProperty(property)) {
+    ownProps.push(property);
+  } else {
+    prototypeProps.push(property);
+  }
+} // ownProps would return as ["name"] and prototypeProps would return as ["numLegs"]
+//
+// you can use the constructor property to check what kind of object it is
+function Dog(name) {
+  this.name = name;
+}
+function joinDogFraternity(candidate) {
+if (candidate.constructor === Dog) {
+  return true;
+} else {
+  return false;
+}
+}
+// you can set the prototype to an object which already has the properties to save time 
+function Dog(name) {
+  this.name = name;
+}
+Dog.prototype = {
+numLegs: 4,
+eat: function() {
+  console.log ("slobbered on melegovic");
+},
+describe: function() {
+  console.log ("My name is " + this.name);
+}
+};
+// doing this erases the constructor however! You can avoid this by defining the constructor in the object
+//so the above would become
+Dog.prototype = {
+  constructor: Dog,
+  numLegs:4, // etc
+}
+// you can use isPrototypeOf to check if an object is a prototype of something
+function Dog(name) {
+  this.name = name;
+}
+let beagle = new Dog("Snoopy");
+Dog.prototype.isPrototypeOf(beagle); // this returns true
