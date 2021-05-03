@@ -1083,3 +1083,97 @@ function Dog(name) {
 }
 let beagle = new Dog("Snoopy");
 Dog.prototype.isPrototypeOf(beagle); // this returns true
+// Prototypes are objects so they can also have prototypes, like stack up it 
+function Dog(name) {
+  this.name = name;
+}
+let beagle = new Dog("Snoopy");
+Dog.prototype.isPrototypeOf(beagle);  // yields true
+Object.prototype.isPrototypeOf(Dog.prototype); // yields true
+/* don't repeat yourself is a principle in coding
+you can create a supertype (or parent) of an object if all objects will have the same property to save writing it out*/
+function Cat(name) {
+  this.name = name;
+}
+Cat.prototype = {
+  constructor: Cat, 
+};
+function Bear(name) {
+  this.name = name;
+}
+Bear.prototype = {
+  constructor: Bear,
+};
+function Animal() { }
+Animal.prototype = {
+  constructor: Animal,
+eat: function() {
+  console.log("nom nom nom");
+}
+}; // this saves you writing the eat function for both animals
+// a way to create a new object and assign it a prototype
+let squid = Object.create(Cephalopod.prototype);
+// you can manually set an object's constructor like below
+Bird.prototype.constructor = Bird;
+Dog.prototype.constructor = Dog;
+// you can still add methods to an object in addition to inherited methods
+function Animal() { }
+Animal.prototype.eat = function() { console.log("nom nom nom"); };
+
+function Dog() { }
+
+Dog.prototype = Object.create(Animal.prototype);
+Dog.prototype.constructor = Dog;
+Dog.prototype.bark = function() {
+  console.log("Woof!");
+};
+
+let beagle = new Dog(); // so Dog inherits Animal properties but also has bark
+// you can also override this way, it goes up in levels, so beagle has first priority, then Dog, then Animal etc
+// mixin gives the same property to objects that may not sure other properties or be unrelated, eg
+let bird = {
+  name: "Donald",
+  numLegs: 2
+};
+let boat = {
+  name: "Warrior",
+  type: "race-boat"
+};
+
+let glideMixin = function(obj) {
+  obj.glide = function () {
+    console.log("gliiiiiiiide")
+  }
+};
+glideMixin(bird);
+glideMixin(boat);// now they can both glide despite not sharing other properties
+// you can make aspects of your objects private by creating them within the constructor function like below
+function Bird() {
+  let weight = 15; // this is where you define it within the function
+this.getWeight = function() {
+  return weight;
+}
+}
+// you can execute a function immediately by putting ()s around it and leave the function ()s blank
+(function () {
+  console.log("A cozy nest is ready");
+})
+
+();
+// you can also use this to related functionality into a single object
+let motionModule = (function () {
+  return {
+    floatMixin: function(obj) {
+      obj.float = function () {
+        console.log("Float like a boss");
+      };
+    },
+    bounceMixin: function(obj) {
+      obj.bounce = function () {
+        console.log("Bounce a ball");
+      };
+    }
+  }
+}) (); // this puts float and bounce both into motion, you can then use it as below
+motionModule.floatMixin(duck);
+duck.float();
