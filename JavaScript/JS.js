@@ -1177,3 +1177,25 @@ let motionModule = (function () {
 }) (); // this puts float and bounce both into motion, you can then use it as below
 motionModule.floatMixin(duck);
 duck.float();
+// using slice to check if tartget is the same as the end of str
+function confirmEnding(str, target) {
+
+  return str.slice(str.length - target.length) === target;
+}
+
+confirmEnding("He has to give me a new name", "name");
+// to repeat a given string for num times, see below using recursion
+function repeatStringNumTimes(str, num) {
+  var repeat = "";
+ if (num < 1) {
+   return ""
+ } else  {
+ return str + repeatStringNumTimes(str, num - 1) // so this gives us the original string and then adds it on another num - 1 times to get the right amount
+ }
+ }
+ repeatStringNumTimes("abc", 3);
+ //this is a weird one, remove all 'falsy' values from an array - false, null, 0, "", undefined, and NaN
+ function bouncer(arr) {
+  return arr.filter(Boolean);
+}
+bouncer([7, "ate", "", false, 9]);
