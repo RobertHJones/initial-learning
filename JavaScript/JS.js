@@ -1333,3 +1333,16 @@ const ratings = watchList.map(({ Title: title, imdbRating: rating }) => ({title,
 // Only change code above this line
 
 console.log(JSON.stringify(ratings));
+
+//using the same array as above, this returns only the films with a rating above 8 on IMDB
+const ratings = watchList.map(({ Title: title, imdbRating: rating }) => ({title, rating}));
+var filteredList = ratings.filter(Title => Title.imdbRating*1 >= 8);
+console.log(filteredList);
+//
+const ratings = watchList.map(({ Director: director, imdbRating: rating }) => ({director, rating}));
+var filteredList = ratings.filter(Title => Title.director !== "James Cameron");
+var averageRating = filteredList.reduce((sum, Title) => sum + (Title.rating*1) / 4, 0);
+
+const ratings = watchList.map(({ Director: director, imdbRating: rating }) => ({director, rating}));
+  var filteredList = ratings.filter(Title => Title.director !== "James Cameron");
+  var averageRating = watchList.reduce((sum, Title) => sum + (Title.imdbRating*1) / 4, 0);
