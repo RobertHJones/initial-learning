@@ -1346,3 +1346,14 @@ var averageRating = filteredList.reduce((sum, Title) => sum + (Title.rating*1) /
 const ratings = watchList.map(({ Director: director, imdbRating: rating }) => ({director, rating}));
   var filteredList = ratings.filter(Title => Title.director !== "James Cameron");
   var averageRating = watchList.reduce((sum, Title) => sum + (Title.imdbRating*1) / 4, 0);
+/*
+this code is to filter out everything except positive integers and then square them*/
+const squareList = arr => {
+
+  const filtering = arr.filter(x => x > 0 && x % 1 === 0) // filter out negative numbers and decimals
+const mapping = filtering.map(x => x ** 2) // square the remaining array x ** y as power of is useful
+
+return mapping;
+};
+const squaredIntegers = squareList([-3, 4.8, 5, 3, -3.2]);
+console.log(squaredIntegers);
