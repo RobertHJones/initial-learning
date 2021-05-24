@@ -1357,3 +1357,70 @@ return mapping;
 };
 const squaredIntegers = squareList([-3, 4.8, 5, 3, -3.2]);
 console.log(squaredIntegers);
+//sort function below
+
+function alphabeticalOrder(arr) {
+  // Only change code below this line
+return arr.sort(function(a, b) {
+  return a === b ? 0 : a < b ? -1 : 1; //to do it in reverse order would be the other way around a < b ? 1: -1;
+})
+
+  // Only change code above this line
+}
+alphabeticalOrder(["a", "d", "c", "a", "z", "g"]); // this returns the array in alphabetical order
+
+//working on
+function splitify(str) {
+  // Only change code below this line
+return str.split(/\W/g)
+  // Only change code above this line
+}
+splitify("Hello World,I-am code");
+// join is used to join the elements of an array to create a string
+function sentensify(str) {
+  // Only change code below this line
+var booBoo = str.split(/\W/); // this is to split it into an array
+var nowBoo = booBoo.join(" "); // and then this to join em
+return nowBoo
+
+  // Only change code above this line
+}
+sentensify("May-the-force-be-with-you");
+
+//converts (" Winter Is  Coming") to winter-is-coming, and the like
+// Only change code below this line
+function urlSlug(title) {
+  var magMa = title.toLowerCase();
+  var boBa = magMa.trim(); // this is remove the whitespace at the start
+  var slugMa = boBa.split(/\s+/);
+  var badMa = slugMa.join("-");
+  return badMa
+  
+  }
+  // Only change code above this line
+  console.log(urlSlug(" Winter Is Coming"))
+  // .every checks an array to see if every element passes a particular test, as below
+  function checkPositive(arr) {
+    // Only change code below this line
+    const belowThresh = (currentValue) => currentValue >= 0;
+  return arr.every(belowThresh)
+    // Only change code above this line
+  }
+  checkPositive([1, 2, 3, -4, 5]);
+  //you could change .every for .some to see if any element passes the test
+  //currying is effectively reducing the amount of arguments in a function by passing them into multiple nested functions
+  function multiply(a, b, c) {
+    return a * b * c;
+} // this is uncurried
+function multiply(a) {
+  return (b) => {
+      return (c) => {
+          return a * b * c
+      }
+  }
+} // this is curried, why it's better remains to be seen
+//or in another form, this is what is happening
+const mul1 = multiply(1);
+const mul2 = mul1(2);
+const result = mul2(3);
+log(result); // 6
