@@ -1424,3 +1424,24 @@ const mul1 = multiply(1);
 const mul2 = mul1(2);
 const result = mul2(3);
 log(result); // 6
+// this function takes a function and returns a curried version of the function
+function curry(fn, ...args) {
+  return (..._arg) => {
+      return fn(...args, ..._arg);
+  }
+}
+//for Math.max and min you can use the apply function, handy for not knowing the arr value
+function sumAll(arr) {
+  const daMax = Math.max.apply(null, arr);
+  const daMin = Math.min.apply(null, arr);
+  return (((daMax - daMin + 1) * (daMax + daMin)) / (2)) // arithmetical progression baby
+}
+
+sumAll([1, 4]);
+
+//to get the difference between arrays or find the similarities use filter
+let intersection = arr1.filter(x => arr2.includes(x));
+let difference = arr1.filter(x => !arr2.includes(x));
+
+let symDifference = arr1.filter(x => !arr2.includes(x))
+letnewSymDifference = symDifference.concat(arr2.filter(x => !arr1.includes(x)));
